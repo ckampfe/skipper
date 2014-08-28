@@ -6,5 +6,5 @@ object Times {
     formatter.print(DateTime.now)
   }
 
-  def ISO8601: String = DateTime.now.toString
+  def iso8601: String = DateTime.now.toString
 }
