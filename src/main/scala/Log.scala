@@ -9,14 +9,14 @@ case class Log(
       timestamp,
       casename,
       List(Entry("INIT", "INIT"))
-    ) => Log(timestamp, casename, entries = List(Entry(timestamp, content)))
+    ) => Log(timestamp, casename, List(Entry(timestamp, content)))
 
     // general case: prepend the new entry
     case Log(
-      timestamp,
+      createdAt,
       casename,
       entries
-    ) => Log(timestamp, casename, Entry(timestamp, content) :: entries)
+    ) => Log(createdAt, casename, Entry(timestamp, content) :: entries)
   }
 }
 

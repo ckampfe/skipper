@@ -2,7 +2,7 @@ import com.github.nscala_time.time.Imports._
 
 object Times {
   def hhmmss: String = {
-    val formatter = DateTimeFormat.forPattern("HH:MM:SS")
+    val formatter = DateTimeFormat.forPattern("HH:mm:ss")
     formatter.print(DateTime.now)
   }
 

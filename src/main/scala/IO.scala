@@ -32,16 +32,16 @@ object IO {
 
     // get a line from stdin and
     // replace it with "> " when we've after it
-    val content = StdIn.readLine(s"${hhmmss} > ")
+    val content = StdIn.readLine("> ")
+
+    // print timestamp for visual feedback
+    println(s"${hhmmss}")
 
     // create new log object
     val currentLog = oldLog.addEntry(s"${iso8601}", content)
 
-    // write it
+    // write to file
     createFileWithJSON(oldLog.casename + ".json", write(currentLog))
-
-    // echo
-    println(write(currentLog))
 
     // recurse
     prompt(currentLog)
